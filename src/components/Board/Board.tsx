@@ -3,7 +3,7 @@ import KeyBoard from '../KeyBoard/KeyBoard'
 import Square from '../Square/Square'
 import "./board.css"
 interface IProps{
-  board: String[]
+  board: string[]
 }
 const Board: React.FC<IProps> = (props) => {
   const { board } = props

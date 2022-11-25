@@ -1,6 +1,8 @@
 interface boardState {
-  board: String[],
-  pos: number
+  board: string[],
+  pos: number,
+  row: number,
+  correctWord: string
 }
 
 export interface rootState {

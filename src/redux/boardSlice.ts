@@ -1,5 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit"
+import wordList from "../word-list.json"
 
+let radomNum = Math.floor(Math.random() * wordList.words.length)
 const initialState = {
   board:
   [ "","","","","",
@@ -9,7 +11,9 @@ const initialState = {
     "","","","","",
     "","","","","",
   ],
-  pos: 0
+  pos: 0,
+  row: 0,
+  correctWord: wordList.words[radomNum].toUpperCase()
 }
 
 export const boardSlice = createSlice({
@@ -27,14 +31,19 @@ export const boardSlice = createSlice({
       isBack: (state) => {
         state.pos--
         state.board[state.pos] = ""
-      }
+      },
+      incRow: (state) => {
+        state.row++
+      },
+
   }
 })
 
 export const {
   setBoard,
   incPos,
-  isBack
+  isBack,
+  incRow,
 } = boardSlice.actions
 
 export default boardSlice.reducer
